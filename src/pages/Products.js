@@ -1,15 +1,26 @@
 import { SearchBox } from "../components/SearchBox/SearchBox";
 import { useSearchParams } from "react-router-dom";
 import { ProductList } from "../components/ProductsList/ProductList";
-import { getProducts } from "../fakeApi";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getProductsThunk } from "../redux/products/productsThunk";
+import { getProducts } from "../redux/products/productsSelectors";
 
 const Products = () => {
-  const products = getProducts();
+
+  const dispatch = useDispatch();
+//  const visibleContacts = useSelector(getFilteredContacts);
+  useEffect(() => {
+    dispatch(getProductsThunk());
+  }, [dispatch]);
+  const products = useSelector(getProducts);
+  
+
   const [searchParams, setSearchParams] = useSearchParams();
   const productName = searchParams.get("name") ?? "";
 
   const visibleProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(productName.toLowerCase())
+    product.title.toLowerCase().includes(productName.toLowerCase())
   );
 
   const updateQueryString = (name) => {

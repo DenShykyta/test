@@ -13,6 +13,7 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   padding-bottom: 5px;
   align-items: center;
+  overflow: hidden;
   
 `;
 export const ProductName = styled.h3`
