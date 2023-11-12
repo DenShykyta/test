@@ -1,25 +1,34 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: 16px;
+  // margin-right: auto;
+  // margin-left: auto;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, 200px);
+  // gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 export const CardWrapper = styled.div`
   border: 1px solid black;
   border-radius: 4px;
+  flex-basis: calc((100% - 40px) / 4);
   display: flex;
   flex-direction: column;
   padding-bottom: 5px;
+  justify-content: space-between;
   align-items: center;
-  
+  overflow: hidden;
 `;
 export const ProductName = styled.h3`
   padding: 4px;
   margin-top: 8px;
   margin-bottom: 0;
   color: black;
+  text-align: center;
+  text-wrap: balance;
 `;
 export const Description = styled.p`
   padding: 4px;
@@ -27,6 +36,7 @@ export const Description = styled.p`
   margin-bottom: 0;
   color: black;
   font-size: 14px;
+  text-align: center;
 `;
 
 export const Button = styled.button`

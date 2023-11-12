@@ -1,33 +1,34 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 15px;
 `;
 
 export const CardWrapper = styled.div`
   border: 1px solid black;
   border-radius: 4px;
   display: flex;
-  flex-direction: column;
-  padding-bottom: 5px;
+  justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  
+  padding: 5px;
+`;
+export const Img = styled.img`
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
 `;
 export const ProductName = styled.h3`
-  padding: 4px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  color: black;
+  margin: 0 10px;
+  text-align: center;
 `;
 export const Description = styled.p`
-  padding: 4px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  color: black;
+  margin: 0 10px;
   font-size: 14px;
+  text-wrap: balance;
+  text-align: center;
 `;
 
 export const Button = styled.button`
@@ -35,11 +36,20 @@ export const Button = styled.button`
   cursor: pointer;
   border-radius: 4px;
   color: inherit;
-  width: 100px;
+  width: 30px;
   transition: 0.2s linear;
 
   &:hover {
     color: white;
     background-color: grey;
   }
+`;
+
+export const BtnWrapper = styled.div`
+  display: flex;
+  gap: 4px;
+`;
+
+export const DescriptionWrapper = styled.div`
+  width: 50%;
 `;
