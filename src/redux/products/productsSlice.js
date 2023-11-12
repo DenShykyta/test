@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getProductsThunk } from "./productsThunk";
+import { getProductsThunk, getProductsByCategoryThunk } from "./productsThunk";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -21,7 +21,10 @@ export const productsSlice = createSlice({
     builder
       .addCase(getProductsThunk.pending, handlePending)
       .addCase(getProductsThunk.fulfilled, handleFulfilledGet)
-      .addCase(getProductsThunk.rejected, handleRejected);
+      .addCase(getProductsThunk.rejected, handleRejected)
+      .addCase(getProductsByCategoryThunk.pending, handlePending)
+      .addCase(getProductsByCategoryThunk.fulfilled, handleFulfilledGet)
+      .addCase(getProductsByCategoryThunk.rejected, handleRejected)
   },
 });
 

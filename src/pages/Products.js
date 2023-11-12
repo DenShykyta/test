@@ -3,7 +3,10 @@ import { useSearchParams } from "react-router-dom";
 import { ProductList } from "../components/Products/ProductList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getProductsThunk } from "../redux/products/productsThunk";
+import {
+  getProductsThunk,
+  getProductsByCategoryThunk,
+} from "../redux/products/productsThunk";
 import { getProducts } from "../redux/products/productsSelectors";
 
 const Products = () => {
@@ -28,6 +31,9 @@ const Products = () => {
 
   return (
     <main>
+      <button onClick={() => dispatch(getProductsByCategoryThunk())}>
+        laptops
+      </button>
       <SearchBox value={productName} onChange={updateQueryString} />
       <ProductList products={visibleProducts} />
     </main>

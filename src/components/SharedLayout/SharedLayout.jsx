@@ -12,7 +12,7 @@ export const SharedLayout = () => {
               <span>📱 Test Store</span>
             </Logo>
           </Link>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart"> 🛒Cart</Link>
         </nav>
       </Header>
       <Suspense fallback={<div>Loading page...</div>}>

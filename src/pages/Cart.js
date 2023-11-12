@@ -2,16 +2,21 @@ import { CartList } from "../components/Cart/CartList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProductsThunk } from "../redux/products/productsThunk";
-import { getProducts } from "../redux/products/productsSelectors";
+import {
+  getProducts,
+  getCartIdList,
+} from "../redux/products/productsSelectors";
 
 const Cart = () => {
+  // const [count, setcount] = useState(1);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProductsThunk());
   }, [dispatch]);
+
   const products = useSelector(getProducts);
-  const CartIdList = useSelector((state) => state.addProducts.CartItems);
+  const CartIdList = useSelector(getCartIdList);
 
   const CartProducts = products
     .filter((product) => CartIdList.includes(product.id))

@@ -5,11 +5,11 @@ import { persistReducer } from "redux-persist";
 
 const initialState = { CartItems: [] };
 
-const addProductsSlice = createSlice({
-  name: "addProducts",
+const CartSlice = createSlice({
+  name: "cart",
   initialState,
   reducers: {
-    clickByProduct(state, action) {
+    addToCart(state, action) {
       if (state.CartItems.includes(action.payload)) {
         return;
       } else {
@@ -25,13 +25,13 @@ const addProductsSlice = createSlice({
 });
 
 const persistConfig = {
-  key: "addProducts",
+  key: "cart",
   storage,
 };
 
-export const persistedAddProductsReducer = persistReducer(
+export const persistedCartSliceReducer = persistReducer(
   persistConfig,
-  addProductsSlice.reducer
+  CartSlice.reducer
 );
 
-export const { clickByProduct, deleteFromCart } = addProductsSlice.actions;
+export const { addToCart, deleteFromCart } = CartSlice.actions;

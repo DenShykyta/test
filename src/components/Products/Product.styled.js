@@ -22,6 +22,11 @@ export const CardWrapper = styled.div`
   align-items: center;
   overflow: hidden;
 `;
+export const Img = styled.img`
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+`;
 export const ProductName = styled.h3`
   padding: 4px;
   margin-top: 8px;
