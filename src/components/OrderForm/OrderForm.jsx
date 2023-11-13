@@ -1,32 +1,38 @@
 import { useForm } from "react-hook-form";
 import { orderSchema } from "../schemas";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Order } from "./OrderForm.style";
+
 function OrderForm() {
-  const { register, handleSubmit } = useForm({
-    defaultValues: { name: "Sasha" },
-    reValidateMode: { orderSchema },
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(orderSchema),
   });
 
   const onSubmit = (data) => console.log(data);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Order onSubmit={handleSubmit(onSubmit)}>
       <label>
-        Name
-        <input type="text" {...register("name")} />
+        <input type="text" {...register("name")} placeholder="Name" />
+        <p>{errors.name?.message}</p>
       </label>
       <label>
-        Surname
-        <input type="text" {...register("Surname")} />
+        <input type="text" {...register("surname")} placeholder=" Surname" />
+        <p>{errors.surname?.message}</p>
       </label>
       <label>
-        Adress
-        <input type="text" {...register("adress")} />
+        <input type="text" {...register("adress")} placeholder="Adress" />
+        <p>{errors.adress?.message}</p>
       </label>
       <label>
-        Phone number
-        <input type="tel" {...register("phone")} />
+        <input type="tel" {...register("phone")} placeholder="Phone" />
+        <p>{errors.phone?.message}</p>
       </label>
       <button type="submit">Order</button>
-    </form>
+    </Order>
   );
 }
 
