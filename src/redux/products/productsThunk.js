@@ -11,12 +11,12 @@ export const getProductsThunk = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
-  export const getProductsByCategoryThunk = createAsyncThunk(
+);
+export const getProductsByCategoryThunk = createAsyncThunk(
   "poducts/getProductsByCategory",
-  async (_, thunkAPI) => {
+  async (category, thunkAPI) => {
     try {
-      const data = await getProductsByCategory();
+      const data = await getProductsByCategory(category);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

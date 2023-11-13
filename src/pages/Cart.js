@@ -1,6 +1,7 @@
-import { CartList } from "../components/Cart/CartList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import OrderForm from "../components/OrderForm/OrderForm";
+import CartList from "../components/Cart/CartList";
 import { getProductsThunk } from "../redux/products/productsThunk";
 import {
   getProducts,
@@ -31,6 +32,7 @@ const Cart = () => {
       ) : (
         <p>Empty Cart</p>
       )}
+      <OrderForm />
     </main>
   );
 };

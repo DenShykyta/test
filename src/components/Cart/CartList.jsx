@@ -1,7 +1,9 @@
 import CartCard from "./CartCard";
 import { Container, CardWrapper } from "./Cart.styled";
 
-export const CartList = ({ products }) => {
+import React from "react";
+
+function CartList({ products }) {
   return (
     <Container>
       {products.map((product) => (
@@ -11,4 +13,6 @@ export const CartList = ({ products }) => {
       ))}
     </Container>
   );
-};
+}
+
+export default CartList;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { deleteFromCart } from "../../redux/products/cartSlise";
 // import { totalPrice } from "../../redux/products/TotalSlise";
 
-import { Button, BtnWrapper } from "./Cart.styled";
+import { Button, BtnWrapper, Quantity } from "./Cart.styled";
 
 function Count({ id, count, price }) {
   const [countValue, setCountValue] = useState(count);
@@ -27,7 +27,7 @@ function Count({ id, count, price }) {
       <Button type="button" onClick={decrease}>
         ➖
       </Button>
-      <span>{countValue}</span>
+      <Quantity>{countValue}</Quantity>
       <Button type="button" onClick={() => increase()}>
         ➕
       </Button>

@@ -1,8 +1,7 @@
 import { Container, CardWrapper } from "./Product.styled";
-
 import ProductCard from "./ProductCard";
 
-export const ProductList = ({ products }) => {
+function ProductList({ products }) {
   return (
     <Container>
       {products.map((product) => (
@@ -12,4 +11,6 @@ export const ProductList = ({ products }) => {
       ))}
     </Container>
   );
-};
+}
+
+export default ProductList;

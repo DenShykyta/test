@@ -17,7 +17,7 @@ export const CardWrapper = styled.div`
   flex-basis: calc((100% - 40px) / 4);
   display: flex;
   flex-direction: column;
-  padding-bottom: 5px;
+  padding: 5px 0;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;

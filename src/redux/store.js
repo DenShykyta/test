@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistedCartSliceReducer } from "./products/cartSlise";
 // import totalSliceReducer from "./products/TotalSlice";
+import filterSliceReducer from "./products/filterSlice";
 import productsReducer from "./products/productsSlice";
 import { persistStore } from "redux-persist";
 
@@ -16,6 +17,7 @@ import {
 export const store = configureStore({
   reducer: {
     products: productsReducer,
+    filter: filterSliceReducer,
     cart: persistedCartSliceReducer,
     // total: totalSliceReducer,
   },

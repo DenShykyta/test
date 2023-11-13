@@ -34,14 +34,16 @@ export const Description = styled.p`
 export const Button = styled.button`
   padding: 4px;
   cursor: pointer;
-  border-radius: 4px;
+  border: none;
+  border-radius: 50px;
   color: inherit;
-  width: 30px;
+  width: 40px;
+  background-color: unset;
   transition: 0.2s linear;
 
   &:hover {
     color: white;
-    background-color: grey;
+    background-color: orange;
   }
 `;
 
@@ -52,4 +54,9 @@ export const BtnWrapper = styled.div`
 
 export const DescriptionWrapper = styled.div`
   width: 50%;
+`;
+
+export const Quantity = styled.span`
+  font-size: 18px;
+  padding: 8px;
 `;

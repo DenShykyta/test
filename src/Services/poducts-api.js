@@ -8,8 +8,14 @@ export const getProducts = async () => {
   return data.products;
 };
 
-export const getProductsByCategory = async () => {
-  const { data } = await axios.get("/products/category/laptops");
+export const getProductsByCategory = async (category) => {
+  const { data } = await axios.get(`/products/category/${category}`);
 
   return data.products;
+};
+
+export const getCategories = async () => {
+  const { data } = await axios.get("/products/categories");
+
+  return data;
 };
