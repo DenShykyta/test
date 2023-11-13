@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
 const initialState = { CartItems: [] };
 
 const CartSlice = createSlice({
-  name: "cart",
+  name: 'cart',
   initialState,
   reducers: {
     addToCart(state, action) {
@@ -17,15 +17,16 @@ const CartSlice = createSlice({
       }
     },
     deleteFromCart(state, action) {
-      state.CartItems = state.CartItems.filter(
-        (item) => item !== action.payload
-      );
+      state.CartItems = state.CartItems.filter(item => item !== action.payload);
+    },
+    cleanCart(state) {
+      state.CartItems = [];
     },
   },
 });
 
 const persistConfig = {
-  key: "cart",
+  key: 'cart',
   storage,
 };
 
@@ -34,4 +35,4 @@ export const persistedCartSliceReducer = persistReducer(
   CartSlice.reducer
 );
 
-export const { addToCart, deleteFromCart } = CartSlice.actions;
+export const { addToCart, deleteFromCart, cleanCart } = CartSlice.actions;

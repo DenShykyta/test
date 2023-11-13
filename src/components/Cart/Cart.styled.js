@@ -1,5 +1,5 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ export const Description = styled.p`
   text-align: center;
 `;
 
-export const Button = styled.button`
+export const CountButton = styled.button`
   padding: 4px;
   cursor: pointer;
   border: none;
@@ -47,7 +47,7 @@ export const Button = styled.button`
   }
 `;
 
-export const BtnWrapper = styled.div`
+export const BtnCountWrapper = styled.div`
   display: flex;
   gap: 4px;
 `;
@@ -59,4 +59,52 @@ export const DescriptionWrapper = styled.div`
 export const Quantity = styled.span`
   font-size: 18px;
   padding: 8px;
+`;
+export const EmptyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const EmptyText = styled.h1`
+  font-size: 24px;
+`;
+export const EmptyCartImg = styled.img`
+  display: block;
+  max-width: 30%;
+`;
+export const BtnWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const LinkToProducts = styled(Link)`
+  font-size: 24px;
+  padding: 4px 16px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 30px;
+  border: 2px solid black;
+  background-color: unset;
+  transition: 0.2s linear;
+
+  &:hover {
+    background-color: grey;
+    color: white;
+  }
+`;
+export const ClearCartBtn = styled.button`
+  background-color: unset;
+  font-size: 24px;
+  color: inherit;
+  padding: 4px 16px;
+  border-radius: 30px;
+  border: 2px solid black;
+  transition: 0.2s linear;
+
+  &:hover {
+    background-color: grey;
+    color: white;
 `;

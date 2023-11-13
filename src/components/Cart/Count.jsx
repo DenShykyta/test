@@ -1,9 +1,8 @@
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import { deleteFromCart } from "../../redux/products/cartSlise";
-// import { totalPrice } from "../../redux/products/TotalSlise";
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { deleteFromCart } from '../../redux/products/cartSlise';
 
-import { Button, BtnWrapper, Quantity } from "./Cart.styled";
+import { CountButton, BtnCountWrapper, Quantity } from './Cart.styled';
 
 function Count({ id, count, price }) {
   const [countValue, setCountValue] = useState(count);
@@ -16,25 +15,24 @@ function Count({ id, count, price }) {
       })();
     } else {
       (() => setCountValue(countValue - 1))();
-      //   (() => dispatch(totalPrice(price, countValue)))();
     }
   };
   const increase = () => {
     setCountValue(countValue + 1);
   };
   return (
-    <BtnWrapper>
-      <Button type="button" onClick={decrease}>
+    <BtnCountWrapper>
+      <CountButton type="button" onClick={decrease}>
         ➖
-      </Button>
+      </CountButton>
       <Quantity>{countValue}</Quantity>
-      <Button type="button" onClick={() => increase()}>
+      <CountButton type="button" onClick={() => increase()}>
         ➕
-      </Button>
-      <Button type="button" onClick={() => dispatch(deleteFromCart(id))}>
+      </CountButton>
+      <CountButton type="button" onClick={() => dispatch(deleteFromCart(id))}>
         🗑️
-      </Button>
-    </BtnWrapper>
+      </CountButton>
+    </BtnCountWrapper>
   );
 }
 

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   max-width: 960px;
@@ -25,9 +25,20 @@ export const Logo = styled.p`
 
 export const Link = styled(NavLink)`
   padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+`;
+
+export const CartLink = styled(NavLink)`
+  padding: 8px 16px;
+  border: 1px solid black;
   border-radius: 4px;
   text-decoration: none;
   color: black;
   font-weight: 500;
 
+  &.active {
+    background-color: orange;
+  }
 `;
