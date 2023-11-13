@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { BtnWrapper, ClearCartBtn } from './Cart.styled';
-import OrderForm from '../Forms/OrderForm';
+// import OrderForm from '../Forms/OrderForm';
 import CartList from './CartList';
 import BackToStorBtn from './BackToStorBtn';
 import EmptyCart from './EmptyCart';
@@ -38,7 +38,7 @@ const Cart = () => {
       ) : (
         <EmptyCart />
       )}
-      {CartIdList.length !== 0 && <OrderForm />}
+      {/* {CartIdList.length !== 0 && <OrderForm />} */}
       <BtnWrapper>
         <BackToStorBtn />
         {CartIdList.length !== 0 && (
