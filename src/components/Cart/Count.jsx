@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { deleteFromCart } from '../../redux/products/cartSlise';
+import { deleteFromCart } from '../../redux/products/cartSlice';
 
 import { CountButton, BtnCountWrapper, Quantity } from './Cart.styled';
 

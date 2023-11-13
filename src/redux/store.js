@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { persistedCartSliceReducer } from "./products/cartSlise";
+import { configureStore } from '@reduxjs/toolkit';
+import { persistedCartSliceReducer } from './products/cartSlice';
 // import totalSliceReducer from "./products/TotalSlice";
-import filterSliceReducer from "./products/filterSlice";
-import productsReducer from "./products/productsSlice";
-import { persistStore } from "redux-persist";
+import filterSliceReducer from './products/filterSlice';
+import productsReducer from './products/productsSlice';
+import { persistStore } from 'redux-persist';
 
 import {
   FLUSH,
@@ -12,7 +12,7 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
+} from 'redux-persist';
 
 export const store = configureStore({
   reducer: {
@@ -21,7 +21,7 @@ export const store = configureStore({
     cart: persistedCartSliceReducer,
     // total: totalSliceReducer,
   },
-  middleware: (getDefaultMiddleware) => [
+  middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
