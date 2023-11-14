@@ -1,8 +1,8 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getCategories } from "../../Services/poducts-api";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { getCategories } from '../../Services/poducts-api';
 
 export const getCategoriesThunk = createAsyncThunk(
-  "products/getCategories",
+  'products/getCategories',
   async (_, thunkAPI) => {
     try {
       const data = await getCategories();
@@ -12,5 +12,3 @@ export const getCategoriesThunk = createAsyncThunk(
     }
   }
 );
-
-

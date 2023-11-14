@@ -91,7 +91,7 @@ export const LinkToProducts = styled(Link)`
   transition: 0.2s linear;
 
   &:hover {
-    background-color: grey;
+    background-color: orange;
     color: white;
   }
 `;
@@ -105,6 +105,6 @@ export const ClearCartBtn = styled.button`
   transition: 0.2s linear;
 
   &:hover {
-    background-color: grey;
+    background-color: orange;
     color: white;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Order = styled.form`
+export const FormOrder = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,10 +20,20 @@ export const Button = styled.button`
 
   &:hover {
     color: white;
-    background-color: grey;
+    background-color: orange;
   }
 `;
 export const Warning = styled.p`
   font-size: 10px;
   color: red;
+  margin: 0;
+  position: relative;
+  top: 0;
+`;
+export const FormGroup = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  margin-bottom: 5px;
 `;

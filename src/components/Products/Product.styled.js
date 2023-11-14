@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ export const Description = styled.p`
   text-align: center;
 `;
 
-export const Button = styled.button`
+export const AddButton = styled.button`
   padding: 4px;
   cursor: pointer;
   border-radius: 4px;
@@ -49,6 +49,23 @@ export const Button = styled.button`
 
   &:hover {
     color: white;
-    background-color: grey;
+    background-color: orange;
+  }
+`;
+export const LoadMoreBtn = styled.button`
+  display: block;
+  margin: 20px auto;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: unset;
+  transition: 0.2s linear;
+
+  &:hover {
+    color: white;
+    background-color: orange;
   }
 `;

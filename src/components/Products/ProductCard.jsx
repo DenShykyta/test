@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/products/cartSlice';
-import { ProductName, Description, Button, Img } from './Product.styled';
+import { ProductName, Description, AddButton, Img } from './Product.styled';
 
 const ProductCard = ({ product }) => {
   const {
-    id,
     title,
     description,
     price,
@@ -17,14 +16,14 @@ const ProductCard = ({ product }) => {
       <ProductName>{title}</ProductName>
       <Description>{description.slice(0, 50).trim() + '...'}</Description>
       <Description>{price} usd</Description>
-      <Button
+      <AddButton
         type="button"
         onClick={() => {
-          dispatch(addToCart(id));
+          dispatch(addToCart(product));
         }}
       >
         Add to CART
-      </Button>
+      </AddButton>
     </>
   );
 };

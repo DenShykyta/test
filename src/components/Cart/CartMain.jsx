@@ -1,32 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { BtnWrapper, ClearCartBtn } from './Cart.styled';
 import OrderForm from '../Forms/OrderForm';
 import CartList from './CartList';
 import BackToStorBtn from './BackToStorBtn';
 import EmptyCart from './EmptyCart';
-import { getProductsThunk } from '../../redux/products/productsThunk';
 import {
-  getProducts,
   getCartIdList,
 } from '../../redux/products/productsSelectors';
 import { cleanCart } from '../../redux/products/cartSlice';
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const productsList = useSelector(getCartIdList);
 
-  useEffect(() => {
-    dispatch(getProductsThunk());
-  }, [dispatch]);
-
-  const products = useSelector(getProducts);
-  const CartIdList = useSelector(getCartIdList);
-
-  const CartProducts = products
-    .filter(product => CartIdList.includes(product.id))
-    .map(product => {
-      return { ...product, count: 1 };
-    });
+  const CartProducts = productsList.map(product => {
+    return { ...product, count: 1 };
+  });
   const handleCleanCart = () => {
     dispatch(cleanCart());
   };
@@ -38,10 +27,12 @@ const Cart = () => {
       ) : (
         <EmptyCart />
       )}
-      {CartIdList.length !== 0 && <OrderForm />}
+      {productsList.length !== 0 && (
+        <OrderForm onSubmitForm={handleCleanCart} />
+      )}
       <BtnWrapper>
         <BackToStorBtn />
-        {CartIdList.length !== 0 && (
+        {productsList.length !== 0 && (
           <ClearCartBtn type="button" onClick={handleCleanCart}>
             Clear Cart
           </ClearCartBtn>

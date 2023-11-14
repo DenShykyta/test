@@ -1,41 +1,49 @@
 import { useForm } from 'react-hook-form';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { orderSchema } from '../schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Order, Button, Warning } from './Forms.style';
+import { FormOrder, Button, Warning, FormGroup } from './Forms.style';
 
-function OrderForm() {
+function OrderForm({ onSubmitForm }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(orderSchema),
   });
-  console.log(errors);
-  const onSubmit = event => {
-    // console.log(event);
+
+  const onSubmit = data => {
+    Notify.success(`Thank you for your order, ${data.name} ${data.surname}!`);
+    reset();
+    onSubmitForm();
   };
   return (
-    <Order onSubmit={handleSubmit(onSubmit)}>
-      <label>
+    <FormOrder onSubmit={handleSubmit(onSubmit)}>
+      <FormGroup>
+        Name
         <input autoFocus type="text" {...register('name')} placeholder="Name" />
         <Warning>{errors.name?.message}</Warning>
-      </label>
-      <label>
+      </FormGroup>
+      <FormGroup>
+        Surname
         <input type="text" {...register('surname')} placeholder="Surname" />
         <Warning>{errors.surname?.message}</Warning>
-      </label>
-      <label>
+      </FormGroup>
+      <FormGroup>
+        Adress
         <input type="text" {...register('adress')} placeholder="Adress" />
         <Warning>{errors.adress?.message}</Warning>
-      </label>
-      <label>
+      </FormGroup>
+      <FormGroup>
+        Phone
         <input type="tel" {...register('phone')} placeholder="+380951234567" />
         <Warning>{errors.phone?.message}</Warning>
-      </label>
+      </FormGroup>
 
       <Button type="submit">Order</Button>
-    </Order>
+    </FormOrder>
   );
 }
 

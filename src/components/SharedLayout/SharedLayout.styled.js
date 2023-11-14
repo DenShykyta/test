@@ -38,7 +38,7 @@ export const CartLink = styled(NavLink)`
   color: black;
   font-weight: 500;
 
-  // &.active {
-  //   background-color: orange;
-  // }
+  &.active {
+    background-color: orange;
+  }
 `;
