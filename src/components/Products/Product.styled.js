@@ -1,21 +1,30 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // gap: 10px;
+
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 
 export const CardWrapper = styled.div`
   border: 1px solid black;
   border-radius: 4px;
-  flex-basis: calc((100% - 40px) / 4);
   display: flex;
   flex-direction: column;
   padding: 5px 0;
   justify-content: space-between;
   align-items: center;
+  // flex-basis: calc((100% - 40px) / 4);
   overflow: hidden;
+
+  &:hover {
+    outline: 2px solid orange;
+  }
 `;
 export const Img = styled.img`
   height: 100px;

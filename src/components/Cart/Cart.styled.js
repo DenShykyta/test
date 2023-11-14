@@ -32,12 +32,14 @@ export const Description = styled.p`
 `;
 
 export const CountButton = styled.button`
+  margin-left: -8px;
   padding: 4px;
   cursor: pointer;
   border: none;
   border-radius: 50px;
   color: inherit;
   width: 40px;
+
   background-color: unset;
   transition: 0.2s linear;
 
@@ -48,8 +50,12 @@ export const CountButton = styled.button`
 `;
 
 export const BtnCountWrapper = styled.div`
-  display: flex;
-  gap: 4px;
+  // display: flex;
+  // gap: 4px;
+  display: grid;
+  gap: 6px;
+  width: 15%;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -57,8 +63,10 @@ export const DescriptionWrapper = styled.div`
 `;
 
 export const Quantity = styled.span`
+  text-align: right;
   font-size: 18px;
   padding: 8px;
+  margin-left: -8px;
 `;
 export const EmptyWrapper = styled.div`
   display: flex;
