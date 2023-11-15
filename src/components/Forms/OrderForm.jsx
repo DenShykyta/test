@@ -1,10 +1,13 @@
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { orderSchema } from '../schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormOrder, Button, Warning, FormGroup } from './Forms.style';
-
+import { getCartList } from '../../redux/products/productsSelectors';
 function OrderForm({ onSubmitForm }) {
+  const cartItems = useSelector(getCartList);
+
   const {
     register,
     handleSubmit,
@@ -18,6 +21,7 @@ function OrderForm({ onSubmitForm }) {
     Notify.success(`Thank you for your order, ${data.name} ${data.surname}!`);
     reset();
     onSubmitForm();
+    console.log([data, cartItems]);
   };
   return (
     <FormOrder onSubmit={handleSubmit(onSubmit)}>

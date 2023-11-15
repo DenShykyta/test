@@ -42,7 +42,8 @@ export const CartLink = styled(NavLink)`
   color: black;
   font-weight: 500;
 
-  &.active {
+  &.active,
+  &:hover {
     background-color: orange;
   }
 `;

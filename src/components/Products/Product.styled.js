@@ -12,6 +12,7 @@ export const Container = styled.div`
 `;
 
 export const CardWrapper = styled.div`
+  background: ${props => (props.added ? 'green' : '')};
   border: 1px solid black;
   border-radius: 4px;
   display: flex;
