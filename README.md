@@ -1,5 +1,7 @@
 # Store
 
+Follow the link to view the site [Store](https://dummyjson.com)
+
 Online store selling goods of various categories with the possibility to create
 a shopping cart and place an order. It is a single-page site with two pages:
 
@@ -11,7 +13,7 @@ a shopping cart and place an order. It is a single-page site with two pages:
 The page consists of a header, a category and search filter field, a product
 cards field, and a "Loadmore" button.
 
-![Products page](./assets/productPage.jpg width="100px")
+![Products page](./assets/productPage.jpg)
 
 ### Header
 
@@ -35,7 +37,12 @@ The search and filtering field consists of:
 - Search filters the list of products based on the entered search query. The
   search is performed dynamically with the input of characters.
 
+#### Filter & Search field
+
 ![Filter & Search field](./assets/filterField.jpg)
+
+#### Filter options
+
 ![Filter options](./assets/filter.png)
 
 ### Products field
@@ -60,7 +67,7 @@ buttons.
 
 ### Header
 
-The cart header is only visible when the Cart button is active.
+The cart header differs only in the active state of the Cart button.
 
 ### Cart field
 
@@ -80,7 +87,7 @@ the amount of the product and the price of the product. Pressing the delete
 button and the button to reduce the quantity of the product in the position of
 the quantity indicator 1 - the product is removed from the basket.
 
-[Cart page](./assets/cart.jpg) [Cart page Empty](./assets/cartEmpty.jpg)
+![Cart page](./assets/cart.jpg) ![Cart page Empty](./assets/cartEmpty.jpg)
 
 ### Form Order
 
@@ -107,6 +114,8 @@ the form]!".
 ![Order Form Phone invalid](./assets/formPhoneValid.jpg)
 ![Success Order](./assets/sendNotification.jpg)
 
+Follow the link to view the site [Store](https://dummyjson.com)
+
 ## Technologies
 
 - JavaScript
@@ -118,6 +127,7 @@ the form]!".
 - redux-toolkit
 - react-router-dom
 - redux-persist
+- asyncthunk
 - styled-components
 - axios
 - gitHub Desctope
@@ -144,6 +154,6 @@ This project is developed with
 
 ## Backend
 
-For backend, we can use service [DummyJSON](https://dummyjson.com).
+Еhe service used for the backend [DummyJSON](https://dummyjson.com).
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Test+Task+for+Lampa+Software)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Test+Task+Test+Task)](https://git.io/typing-svg)
