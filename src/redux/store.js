@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistedCartSliceReducer } from './products/cartSlice';
-// import totalSliceReducer from "./products/TotalSlice";
 import filterSliceReducer from './products/filterSlice';
 import productsReducer from './products/productsSlice';
 import { persistStore } from 'redux-persist';
@@ -19,7 +18,6 @@ export const store = configureStore({
     products: productsReducer,
     filter: filterSliceReducer,
     cart: persistedCartSliceReducer,
-    // total: totalSliceReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({

@@ -8,8 +8,12 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 8px;
   border-bottom: 1px solid black;
+  background-color: #f5d442;
 
   > nav {
     display: flex;
@@ -24,7 +28,7 @@ export const Logo = styled.p`
 `;
 
 export const Link = styled(NavLink)`
-  padding: 8px 16px;
+  padding: 8px 0;
   text-decoration: none;
   color: black;
   font-weight: 500;
@@ -41,4 +45,9 @@ export const CartLink = styled(NavLink)`
   &.active {
     background-color: orange;
   }
+`;
+export const Total = styled.p`
+  border: none;
+  text-decoration: underline;
+  margin: 0;
 `;

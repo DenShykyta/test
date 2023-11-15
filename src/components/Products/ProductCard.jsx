@@ -10,6 +10,8 @@ const ProductCard = ({ product }) => {
     images: [firstImage = 'https://placehold.co/100x100'],
   } = product;
   const dispatch = useDispatch();
+  const updatedProduct = { ...product, count: 1 };
+
   return (
     <>
       <Img src={firstImage} alt={title} />
@@ -19,7 +21,7 @@ const ProductCard = ({ product }) => {
       <AddButton
         type="button"
         onClick={() => {
-          dispatch(addToCart(product));
+          dispatch(addToCart(updatedProduct));
         }}
       >
         Add to CART

@@ -1,38 +1,71 @@
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromCart } from '../../redux/products/cartSlice';
+import { getCartList } from '../../redux/products/productsSelectors';
+import { changeCount } from '../../redux/products/cartSlice';
+import {
+  CountButton,
+  BtnCountWrapper,
+  Quantity,
+  TotalPrice,
+  Wrapper,
+} from './Cart.styled';
 
-import { CountButton, BtnCountWrapper, Quantity } from './Cart.styled';
-
-function Count({ id, count, price }) {
-  const [countValue, setCountValue] = useState(count);
+function Count({ product }) {
+  const { id, count, price } = product;
   const dispatch = useDispatch();
+  const cartList = useSelector(getCartList);
 
+  // Створює новий масив з отримано зі стейту масиву cartList зі зменшиним count у вибраному по id об'єкті
+  const decreasedCart = cartList.map(item => {
+    if (item.id === id) {
+      return {
+        ...item,
+        count: item.count - 1,
+        totalPrice: count * price,
+      };
+    }
+    return item;
+  });
+
+  // Створює масив з отримано зі стейту масиву cartList зі збільшеним count у вибраному по id об'єкті
+  const increasedCart = cartList.map(item => {
+    if (item.id === id) {
+      return { ...item, count: item.count + 1 };
+    }
+    return item;
+  });
+
+  // Зменшення count при натисканні кнопки "-" шляхом відправки в state зміненого вище масиву об'єктів, якщо зменшення від значення 1, то товар видаляється з корзини
   const decrease = () => {
-    if (countValue <= 1) {
+    if (count <= 1) {
       (() => {
         dispatch(deleteFromCart(id));
       })();
     } else {
-      (() => setCountValue(countValue - 1))();
+      dispatch(changeCount(decreasedCart));
     }
   };
+  // Збільшення count при натисканні кнопки "+" шляхом відправки в state зміненого вище масиву об'єктів
   const increase = () => {
-    setCountValue(countValue + 1);
+    dispatch(changeCount(increasedCart));
   };
+  const totalPrice = count * price;
   return (
-    <BtnCountWrapper>
-      <CountButton type="button" onClick={decrease}>
-        ➖
-      </CountButton>
-      <Quantity>{countValue}</Quantity>
-      <CountButton type="button" onClick={() => increase()}>
-        ➕
-      </CountButton>
-      <CountButton type="button" onClick={() => dispatch(deleteFromCart(id))}>
-        🗑️
-      </CountButton>
-    </BtnCountWrapper>
+    <Wrapper>
+      <TotalPrice>{totalPrice} usd</TotalPrice>
+      <BtnCountWrapper>
+        <CountButton type="button" onClick={decrease}>
+          ➖
+        </CountButton>
+        <Quantity>{count}</Quantity>
+        <CountButton type="button" onClick={increase}>
+          ➕
+        </CountButton>
+        <CountButton type="button" onClick={() => dispatch(deleteFromCart(id))}>
+          🗑️
+        </CountButton>
+      </BtnCountWrapper>
+    </Wrapper>
   );
 }
 
