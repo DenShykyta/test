@@ -1,7 +1,14 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container, Header, Logo, Link, CartLink } from './SharedLayout.styled';
+import {
+  Container,
+  Header,
+  RightSide,
+  Link,
+  CartLink,
+} from './SharedLayout.styled';
 import TotalPrice from './TotalPrice';
+import { AuthNav } from './AuthNav';
 
 export const SharedLayout = () => {
   return (
@@ -9,12 +16,15 @@ export const SharedLayout = () => {
       <Header>
         <nav>
           <Link to="/" end>
-            <Logo>
+            <p>
               <span>📱 Store</span>
-            </Logo>
+            </p>
           </Link>
-          <TotalPrice />
-          <CartLink to="/cart"> 🛒Cart</CartLink>
+          <RightSide>
+            <AuthNav />
+            <CartLink to="/cart"> 🛒Cart</CartLink>
+            <TotalPrice />
+          </RightSide>
         </nav>
       </Header>
       <Suspense fallback={<div>Loading page...</div>}>

@@ -21,17 +21,30 @@ export const Header = styled.header`
     justify-content: space-between;
   }
 `;
-
-export const Logo = styled.p`
-  font-weight: 700;
+export const RightSide = styled.div`
+  display: flex;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+export const AuthWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  }
+`;
+export const WelcomeText = styled.p`
   margin: 0;
+  }
 `;
 
 export const Link = styled(NavLink)`
-  padding: 8px 0;
   text-decoration: none;
   color: black;
   font-weight: 500;
+  font-weight: 700;
 `;
 
 export const CartLink = styled(NavLink)`
@@ -48,7 +61,9 @@ export const CartLink = styled(NavLink)`
   }
 `;
 export const Total = styled.p`
+  font-weight: 500;
   border: none;
   text-decoration: underline;
   margin: 0;
+  user-select: none;
 `;

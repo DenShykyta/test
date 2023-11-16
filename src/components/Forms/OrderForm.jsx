@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { orderSchema } from '../schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FormOrder, Button, Warning, FormGroup } from './Forms.style';
+import { Form, Button, Warning, FormGroup } from './Forms.style';
 import { getCartList } from '../../redux/products/productsSelectors';
+
 function OrderForm({ onSubmitForm }) {
   const cartItems = useSelector(getCartList);
 
@@ -24,20 +25,33 @@ function OrderForm({ onSubmitForm }) {
     console.log([data, cartItems]);
   };
   return (
-    <FormOrder onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <FormGroup>
         Name
-        <input autoFocus type="text" {...register('name')} placeholder="Name" />
+        <input
+          autoFocus
+          type="text"
+          {...register('name')}
+          placeholder="Enter name ..."
+        />
         <Warning>{errors.name?.message}</Warning>
       </FormGroup>
       <FormGroup>
         Surname
-        <input type="text" {...register('surname')} placeholder="Surname" />
+        <input
+          type="text"
+          {...register('surname')}
+          placeholder="Enter surname ..."
+        />
         <Warning>{errors.surname?.message}</Warning>
       </FormGroup>
       <FormGroup>
         Adress
-        <input type="text" {...register('adress')} placeholder="Adress" />
+        <input
+          type="text"
+          {...register('adress')}
+          placeholder="Enter adress ..."
+        />
         <Warning>{errors.adress?.message}</Warning>
       </FormGroup>
       <FormGroup>
@@ -47,7 +61,7 @@ function OrderForm({ onSubmitForm }) {
       </FormGroup>
 
       <Button type="submit">Order</Button>
-    </FormOrder>
+    </Form>
   );
 }
 
