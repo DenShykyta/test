@@ -15,11 +15,13 @@ import { getCategoriesThunk } from '../../redux/products/filterThunk';
 import {
   getProducts,
   getCategories,
+  getIsLoading,
 } from '../../redux/products/productsSelectors';
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector(getProducts);
+  const isLoading = useSelector(getIsLoading);
   const categories = useSelector(getCategories);
   const [skip, setSkip] = useState(30);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -64,7 +66,10 @@ const Products = () => {
       />
       <SearchBox value={productName} onChange={updateQueryString} />
       <ProductList products={visibleProducts} />
-      {skip > 90 ? (
+
+      {isLoading ? (
+        'Please waite!!!'
+      ) : skip > 90 ? (
         <h2>There are no more products!</h2>
       ) : (
         <LoadMoreBtn type="button" onClick={handleLoadMore}>
