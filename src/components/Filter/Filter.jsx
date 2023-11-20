@@ -1,5 +1,5 @@
-import React from "react";
-import { Wrapper, Reset, Select } from "./Filter.styled";
+import React from 'react';
+import { Wrapper, Reset, Select } from './Filter.styled';
 
 function Filter({ categories, onChange, onClick }) {
   return (
@@ -7,8 +7,9 @@ function Filter({ categories, onChange, onClick }) {
       <Reset type="button" onClick={onClick}>
         ReSeT
       </Reset>
-      <Select onChange={(e) => onChange(e.target.value)}>
-        {categories.map((category) => (
+      <Select onChange={e => onChange(e.target.value)}>
+        <option value="">Choose a category</option>
+        {categories.map(category => (
           <option key={category} value={category}>
             {category}
           </option>
