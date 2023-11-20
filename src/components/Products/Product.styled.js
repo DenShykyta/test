@@ -12,7 +12,6 @@ export const Container = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-  background: ${props => (props.added ? 'green' : '')};
   border: 1px solid black;
   border-radius: 4px;
   display: flex;
@@ -33,10 +32,13 @@ export const Img = styled.img`
   object-fit: contain;
 `;
 export const ProductName = styled.h3`
+  color: ${props => (props.isActive ? 'green' : 'black')};
+  text-shadow: ${props =>
+    props.isActive ? '1px 1px 15px rgba(37,206,8,0.89)' : ''};
   padding: 4px;
   margin-top: 8px;
   margin-bottom: 0;
-  color: black;
+  // color: black;
   text-align: center;
   text-wrap: balance;
 `;
