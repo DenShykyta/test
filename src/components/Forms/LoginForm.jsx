@@ -14,6 +14,8 @@ export const LoginForm = () => {
     reset,
   } = useForm({
     resolver: yupResolver(loginSchema),
+    // User data from the backend, as the backend does not allow creating a new user
+    defaultValues: { username: 'hbingley1', password: 'CQutx25i8r' },
   });
 
   const onSubmitForm = data => {
@@ -46,29 +48,3 @@ export const LoginForm = () => {
     </Form>
   );
 };
-
-// const handleSubmit = e => {
-//   e.preventDefault();
-//   const form = e.currentTarget;
-//   dispatch(
-//     logIn({
-//       username: form.elements.name.value,
-//       password: form.elements.password.value,
-//     })
-//   );
-//   form.reset();
-// };
-
-// return (
-//   <form onSubmit={handleSubmit} autoComplete="off">
-//     <label>
-//       Name
-//       <input type="text" name="name" placeholder="Enter name ..." />
-//     </label>
-//     <label>
-//       Password
-//       <input type="password" name="password" placeholder="Enter password ..." />
-//     </label>
-//     <button type="submit">Log In</button>
-//   </form>
-// );

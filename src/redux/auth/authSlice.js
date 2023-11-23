@@ -19,6 +19,7 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
+    // For LogOut operation, since the backend does not support such requests and returns an error.
     [logOut.rejected](state) {
       state.user = {};
       state.token = null;
