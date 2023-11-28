@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Form, Button, Warning, FormGroup } from './Forms.style';
-import { loginSchema } from '../schemas';
+import { loginSchema } from './schemas';
 import { logIn } from '../../redux/auth/authOperations';
 
 export const LoginForm = () => {

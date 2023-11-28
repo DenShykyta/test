@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistedCartSliceReducer } from './products/cartSlice';
-import filterSliceReducer from './products/filterSlice';
+import { persistedCartSliceReducer } from './cart/cartSlice';
+import filterSliceReducer from './filter/filterSlice';
 import productsReducer from './products/productsSlice';
 import { persistedAuthSliceReducer } from './auth/authSlice';
 import { persistStore } from 'redux-persist';

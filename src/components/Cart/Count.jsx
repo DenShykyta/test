@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFromCart } from '../../redux/products/cartSlice';
-import { getCartList } from '../../redux/products/productsSelectors';
-import { changeCount } from '../../redux/products/cartSlice';
+import { deleteFromCart, changeCount } from '../../redux/cart/cartSlice';
+import { getCartList } from '../../redux/cart/selectors';
 import {
   CountButton,
   BtnCountWrapper,

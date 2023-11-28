@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { registrationSchema } from '../schemas';
+import { registrationSchema } from './schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Form, Button, Warning, FormGroup } from './Forms.style';
 

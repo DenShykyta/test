@@ -11,12 +11,9 @@ import {
   getProductsByCategoryThunk,
   getProductsMoreThunk,
 } from '../../redux/products/productsThunk';
-import { getCategoriesThunk } from '../../redux/products/filterThunk';
-import {
-  getProducts,
-  getCategories,
-  getIsLoading,
-} from '../../redux/products/productsSelectors';
+import { getCategoriesThunk } from '../../redux/filter/filterThunk';
+import { getProducts, getIsLoading } from '../../redux/products/selectors';
+import { getCategories } from '../../redux/filter/selectors';
 
 const Products = () => {
   const dispatch = useDispatch();

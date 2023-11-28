@@ -1,4 +1,4 @@
-import { getCartList } from '../../redux/products/productsSelectors';
+import { getCartList } from '../../redux/cart/selectors';
 import { useSelector } from 'react-redux';
 import { Total } from './SharedLayout.styled';
 

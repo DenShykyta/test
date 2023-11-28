@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { orderSchema } from '../schemas';
+import { orderSchema } from './schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Form, Button, Warning, FormGroup } from './Forms.style';
-import { getCartList } from '../../redux/products/productsSelectors';
+import { getCartList } from '../../redux/cart/selectors';
 
 function OrderForm({ onSubmitForm }) {
   const cartItems = useSelector(getCartList);

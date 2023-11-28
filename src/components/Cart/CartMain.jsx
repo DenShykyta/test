@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { BtnWrapper, ClearCartBtn } from './Cart.styled';
-import CartList from './CartList';
+import { getCartList } from '../../redux/cart/selectors';
+import { cleanCart } from '../../redux/cart/cartSlice';
 import OrderForm from '../Forms/OrderForm';
-import BackToStorBtn from './BackToStorBtn';
 import EmptyCart from './EmptyCart';
-
-import { getCartList } from '../../redux/products/productsSelectors';
-import { cleanCart } from '../../redux/products/cartSlice';
+import CartList from './CartList';
+import BackToStorBtn from './BackToStorBtn';
+import { BtnWrapper, ClearCartBtn } from './Cart.styled';
 
 const Cart = () => {
   const dispatch = useDispatch();

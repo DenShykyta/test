@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../redux/products/cartSlice';
+import { addToCart } from '../../redux/cart/cartSlice';
 import { ProductName, Description, AddButton, Img } from './Product.styled';
-import { getCartList } from '../../redux/products/productsSelectors';
+import { getCartList } from '../../redux/cart/selectors';
 
 const ProductCard = ({ product }) => {
   const {

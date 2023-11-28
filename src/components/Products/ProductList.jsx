@@ -1,5 +1,5 @@
-import { Container, CardWrapper } from "./Product.styled";
-import ProductCard from "./ProductCard";
+import { Container, CardWrapper } from './Product.styled';
+import ProductCard from './ProductCard';
 
 function ProductList({ products }) {
   return (

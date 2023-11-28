@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getCategoriesThunk } from "./filterThunk";
+import { createSlice } from '@reduxjs/toolkit';
+import { getCategoriesThunk } from './filterThunk';
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -15,7 +15,7 @@ const handleRejected = (state, { payload }) => {
 };
 
 export const filterSlice = createSlice({
-  name: "filter",
+  name: 'filter',
   initialState: { items: [], isLoading: false, error: null },
   extraReducers: (builder) => {
     builder

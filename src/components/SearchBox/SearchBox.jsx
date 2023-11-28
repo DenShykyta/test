@@ -1,4 +1,4 @@
-import { Wrapper, Input, Icon } from "./SearchBox.styled";
+import { Wrapper, Input, Icon } from './SearchBox.styled';
 
 function SearchBox({ value, onChange }) {
   return (

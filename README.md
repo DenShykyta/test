@@ -13,7 +13,7 @@ a shopping cart and place an order. It is a single-page site with two pages:
 The page consists of a header, a category and search filter field, a product
 cards field, and a "Loadmore" button.
 
-![Products page](./assets/productPage.jpg)
+![Products page](./src/images/productPage.jpg)
 
 ### Header
 
@@ -27,7 +27,8 @@ header has Sticky positioning, so it does not hide when scrolling.
   the cart's contents in value terms. When the cart is cleared, the total
   disappears.
 
-![Header ](./assets/header.jpg) ![Header with total](./assets/headerTotal.jpg)
+![Header ](./src/images/header.jpg)
+![Header with total](./src/images/headerTotal.jpg)
 
 ### Filter & Search field
 
@@ -39,11 +40,11 @@ The search and filtering field consists of:
 
 #### Filter & Search field
 
-![Filter & Search field](./assets/filterField.jpg)
+![Filter & Search field](./src/images/filterField.jpg)
 
 #### Filter options
 
-![Filter options](./assets/filter.png)
+![Filter options](./src/images/filter.png)
 
 ### Products field
 
@@ -56,12 +57,12 @@ Product cards consist of a product image, product name, description, price, and
 an Add to Cart button for adding the product to the Cart. Product description
 reduced to 50 characters.
 
-![Load More](./assets/loadMore.jpg)
-![No product to loadig](./assets/noProducts.jpg)
+![Load More](./src/images/loadMore.jpg)
+![No product to loadig](./src/images/noProducts.jpg)
 
 ## Cart page
 
-The Сart зфпу consists of a header, a title, a list of cards of added products
+The Сart page consists of a header, a title, a list of cards of added products
 or a picture of an empty cart, an order form with Back to Store and Clear Cart
 buttons.
 
@@ -87,7 +88,8 @@ the amount of the product and the price of the product. Pressing the delete
 button and the button to reduce the quantity of the product in the position of
 the quantity indicator 1 - the product is removed from the basket.
 
-![Cart page](./assets/cart.jpg) ![Cart page Empty](./assets/cartEmpty.jpg)
+![Cart page](./src/images/cart.jpg)
+![Cart page Empty](./src/images/cartEmpty.jpg)
 
 ### Form Order
 
@@ -110,9 +112,9 @@ The successful dispatch of the order is notified by a notification in the upper
 right corner with the text "Thank you for your order, [name surname - data from
 the form]!".
 
-![Order Form All invalid](./assets/formValidation.jpg)
-![Order Form Phone invalid](./assets/formPhoneValid.jpg)
-![Success Order](./assets/sendNotification.jpg)
+![Order Form All invalid](./src/images/formValidation.jpg)
+![Order Form Phone invalid](./src/images/formPhoneValid.jpg)
+![Success Order](./src/images/sendNotification.jpg)
 
 Follow the link to view the site [Store](https://dummyjson.com)
 
@@ -127,30 +129,16 @@ Follow the link to view the site [Store](https://dummyjson.com)
 - redux-toolkit
 - react-router-dom
 - redux-persist
-- asyncthunk
+- asyncThunk
 - styled-components
 - axios
 - gitHub Desctope
 - gitHub
 
-# For Developers
+##
 
 This project is developed with
 [Create React App](https://github.com/facebook/create-react-app).
-
-## Copy of project
-
-1. Make a copy of this project.
-2. Don't forget in properties allow git-hub-actions.
-3. Clone the project to your computer
-4. Install all dependencies with: `npm i`
-5. Change project name and username in package.json in fields "name" and
-   "homepage"
-6. in index.js write the correct basename="/car-rent" of your project with /
-   (slash)
-7. Pull your changes to GitHub
-8. For deploying, you can use gh-pages.
-9. To start your project, use the command: `npm start`
 
 ## Backend
 
